@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="funscene" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zJq-a0-MTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="xqh-ke-7YC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wjF-bx-mhu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5P-K2-Kdy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-0f-vI9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuE-9j-wsM">
+                                <rect key="frame" x="163" y="28" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="G7B-yx-Vmd"/>
+                                    <constraint firstAttribute="height" constant="31" id="Pyi-oT-mud"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="arSwitchHit" destination="BV1-FR-VrT" eventType="valueChanged" id="A5I-UK-1Te"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-vW-NEq">
+                                <rect key="frame" x="16" y="318" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="T77-D2-VGY"/>
+                                    <constraint firstAttribute="height" constant="30" id="aHN-Z3-h6x"/>
+                                </constraints>
+                                <state key="normal" title="White"/>
+                                <connections>
+                                    <action selector="setWhite" destination="BV1-FR-VrT" eventType="touchUpInside" id="Bsb-UM-JqX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBs-85-J7i">
+                                <rect key="frame" x="319" y="318" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2qK-pq-Yym"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="UKG-CJ-jNU"/>
+                                </constraints>
+                                <state key="normal" title="Blue"/>
+                                <connections>
+                                    <action selector="setBlue" destination="BV1-FR-VrT" eventType="touchUpInside" id="G6t-r0-8sB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CUz-vW-NEq" firstAttribute="centerY" secondItem="wjF-bx-mhu" secondAttribute="centerY" id="1Cz-rB-YJ8"/>
+                            <constraint firstItem="xqh-ke-7YC" firstAttribute="top" secondItem="vPL-0f-vI9" secondAttribute="bottom" id="9Xn-fK-8gf"/>
+                            <constraint firstItem="dBs-85-J7i" firstAttribute="centerY" secondItem="wjF-bx-mhu" secondAttribute="centerY" id="Dae-1J-UtR"/>
+                            <constraint firstItem="S5P-K2-Kdy" firstAttribute="leading" secondItem="wjF-bx-mhu" secondAttribute="leading" id="Gug-22-sHy"/>
+                            <constraint firstItem="dBs-85-J7i" firstAttribute="trailing" secondItem="wjF-bx-mhu" secondAttribute="trailingMargin" id="Mn0-aB-D7L"/>
+                            <constraint firstItem="yuE-9j-wsM" firstAttribute="top" secondItem="zJq-a0-MTo" secondAttribute="bottom" constant="8" id="P73-Uo-hAn"/>
+                            <constraint firstAttribute="trailing" secondItem="S5P-K2-Kdy" secondAttribute="trailing" id="TWv-H9-Tb4"/>
+                            <constraint firstItem="xqh-ke-7YC" firstAttribute="top" secondItem="S5P-K2-Kdy" secondAttribute="bottom" id="Tia-2D-ZbQ"/>
+                            <constraint firstItem="yuE-9j-wsM" firstAttribute="centerX" secondItem="wjF-bx-mhu" secondAttribute="centerX" id="XQO-HB-J1R"/>
+                            <constraint firstItem="CUz-vW-NEq" firstAttribute="leading" secondItem="wjF-bx-mhu" secondAttribute="leadingMargin" id="brX-Qy-uOd"/>
+                            <constraint firstAttribute="trailing" secondItem="vPL-0f-vI9" secondAttribute="trailing" id="hdI-mC-l8R"/>
+                            <constraint firstItem="S5P-K2-Kdy" firstAttribute="top" secondItem="wjF-bx-mhu" secondAttribute="top" id="uCI-E6-E36"/>
+                            <constraint firstItem="vPL-0f-vI9" firstAttribute="top" secondItem="wjF-bx-mhu" secondAttribute="top" id="xeA-Ae-Aw0"/>
+                            <constraint firstItem="vPL-0f-vI9" firstAttribute="leading" secondItem="wjF-bx-mhu" secondAttribute="leading" id="zEh-VG-3Ew"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="arSceneView" destination="S5P-K2-Kdy" id="Dxr-Vd-Yhq"/>
+                        <outlet property="arSwitch" destination="yuE-9j-wsM" id="ixY-iz-292"/>
+                        <outlet property="sceneView" destination="vPL-0f-vI9" id="DSV-53-twL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.199999999999999" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
